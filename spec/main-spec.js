@@ -11,12 +11,12 @@ describe('FizzBuzzWhizz', function() {
     });
 
     it('当学生报数，数字不包含第一个数的前提下，数字是第二个数的倍数时，应该显示Buzz',function() {
-      var result = getElement(5,3,5,7);
+      var result = getElement(25,3,5,7);
       expect(result).toEqual('Buzz');
     });
 
     it('当学生报数，数字不包含第一个数的前提下，数字是第三个数的倍数时，应该显示Whizz',function() {
-      var result = getElement(7,3,5,7);
+      var result = getElement(28,3,5,7);
       expect(result).toEqual('Whizz');
     });
 
