@@ -12,32 +12,42 @@ function FizzBuzzWhizz (first, second, third) {
 function getElement(student, first, second, third) {
   var number = student.toString().split("");
   var result= [];
+  result=  getIncluding(number, first);
 
-   number.forEach(function(element){
-     if(parseInt(element) ===first) {
-       result="Fizz";
-     }
-   })
-   if(result!=="Fizz") {
-     result=[];
-      if (student%first === 0 || student%second === 0 || student%third === 0){
-       if (student%first === 0) {
-         result.push("Fizz");
-       }
-       if (student%second === 0) {
-         result.push("Buzz");
-       }
-       if (student%third === 0) {
-          result.push("Whizz");
-       }
-       return result.join('');
-     }
-     else {
-         return student;
-     }
+  if(result!=="Fizz") {
+    if (student%first === 0 || student%second === 0 || student%third === 0){
+     return getMultiple (student, first, second, third);
+    }else {
+     return student;
    }
-   else {
-     return result;
-   }
+  }
+  else {
+   return result;
+ }
 }
+
+function getMultiple (student, first, second, third) {
+  var result = [];
+  if (student%first === 0) {
+    result.push("Fizz");
+  }
+  if (student%second === 0) {
+    result.push("Buzz");
+  }
+  if (student%third === 0) {
+     result.push("Whizz");
+  }
+  return result.join('');
+}
+
+function getIncluding(number, first) {
+  var result;
+  number.forEach(function(element){
+    if(parseInt(element) ===first) {
+     result="Fizz";
+    }
+  })
+  return result;
+}
+
 FizzBuzzWhizz (3,5,7);
