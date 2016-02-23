@@ -40,7 +40,7 @@ describe('FizzBuzzWhizz', function() {
       expect(result).toEqual('FizzBuzzWhizz');
     });
 
-    it('当学生报数，数字不是三个数的倍数时，显示数字本身',function() {
+     it('当学生报数，数字不是三个数的倍数时，也不包含第一个数字，显示数字本身',function() {
       var result = getElement(11,3,5,7);
       expect(result).toEqual(11);
     });
