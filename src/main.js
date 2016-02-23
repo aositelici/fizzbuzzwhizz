@@ -1,8 +1,8 @@
 'use strict';
 
-function FizzBuzzWhizz (first, second, third) {
+function FizzBuzzWhizz (number, first, second, third) {
   var result = [];
-  for(var student = 1; student <= 100; student++) {
+  for(var student = 1; student <= number; student++) {
     var element = getElement (student, first, second, third);
     result.push(element);
   }
@@ -16,13 +16,13 @@ function getElement(student, first, second, third) {
 
   if(result!=="Fizz") {
     if (student%first === 0 || student%second === 0 || student%third === 0){
-     return getMultiple (student, first, second, third);
+      return getMultiple (student, first, second, third);
     }else {
-     return student;
-   }
+      return student;
+    }
   }
   else {
-   return result;
+    return result;
  }
 }
 
@@ -50,4 +50,4 @@ function getIncluding(number, first) {
   return result;
 }
 
-FizzBuzzWhizz (3,5,7);
+FizzBuzzWhizz (100,3,5,7);
